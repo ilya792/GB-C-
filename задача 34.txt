@@ -1,0 +1,33 @@
+using System;
+
+namespace ConsoleApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите кол-во элементов в массиве: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[] arr = new int[n];
+            Random rand = new Random();
+
+            Console.WriteLine("Придумываю элементы массива: ");
+            for (int i = 0; i < n; i++)
+            {
+                arr[i] = rand.Next(100, 1000);
+                Console.WriteLine(arr[i]);
+            }
+
+            int count = 0;
+            for (int i = 0; i < n; i++)
+            {
+                if (arr[i] % 2 == 0)
+                {
+                    count++;
+                }
+            }
+
+            Console.WriteLine("Кол-во четных чисел в массиве: " + count);
+        }
+    }
+}
